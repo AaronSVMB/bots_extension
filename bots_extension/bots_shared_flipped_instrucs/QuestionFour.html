@@ -1,0 +1,67 @@
+{{ block title }}Question Five{{ endblock }}
+{{ block content }}
+
+<p>
+  Below are a series of questions regarding your period earnings. They will help you gain an understanding
+  of the calculation of your earnings, which varies with your decision on how to invest your {{ C.ENDOWMENT }}.
+</p>
+
+<p>
+  <br> Each group member, including you, receives {{ C.ENDOWMENT }}. Suppose you invest <strong>11 points</strong> to your
+  <span style="color:mediumseagreen">Green</span>  Green Group's Joint Account and you invest <strong>6 points</strong> to
+  your <span style="color:mediumblue">Blue</span>. Let's further suppose that the other
+  members of your <span style="color:mediumseagreen">Green</span> Group invest a combined <strong>31 points</strong> to the
+  <span style="color:mediumseagreen">Green</span> Joint Account and the other members of your <span style="color:mediumblue">Blue</span> Group invest a combined <strong>18 points</strong> to the
+  <span style="color:mediumblue">Blue</span> Joint Account.
+</p>
+
+<p>
+  <i>Part A</i>
+  <br>
+  What is your individual share from the <span style="color:mediumseagreen">Green</span> Group's Joint Account?
+  <br> Recall: Individual Share = (Total Investment to the Group's Join Account) x ( 0.5 )
+</p>
+
+{{ formfield 'comprehension_question_four_b' }}
+
+<p>
+  <i>Part B</i>
+  <br>
+  What is your individual share from the <span style="color:mediumblue">Blue</span> Group's Joint Account?
+  <br> Recall: Individual Share = (Total Investment to the Group's Join Account) x ( 0.5 )
+</p>
+
+{{ formfield 'comprehension_question_four_a' }}
+
+
+
+<p>
+  <i>Part C</i>
+  <br>
+  With the specified investment to your <span style="color:mediumseagreen">Green</span> and
+    <span style="color:mediumblue">Blue</span> Group's Joint Accounts, how much do you invest to your Personal
+  Account?
+  <br> Recall: Personal Account = 20  -
+  (Your investment to <span style="color:mediumseagreen">Green</span>) - (Your investment to <span style="color:mediumblue">Blue</span>)
+</p>
+
+{{ formfield 'comprehension_question_four_c' }}
+
+<p>
+  <i>Part D</i>
+  <br>
+  What are your Period Earnings?
+  <br> Recall: Period Earnings =  (
+  <span style="color:mediumseagreen">Green</span> Group's Individual Share ) + ( <span style="color:mediumblue">Blue</span> Group's Individual Share )
+  + ( Personal Account )
+</p>
+
+{{ formfield 'comprehension_question_four_d' }}
+
+  <br>
+
+    <div style="text-align: center;">
+        {{ next_button }}
+    </div>
+
+{{ endblock }}

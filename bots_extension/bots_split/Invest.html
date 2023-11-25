@@ -1,0 +1,71 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Investment{{ endblock }}
+{{ block content }}
+
+    <p style="text-align:right;">
+        Period: {{ player.round_number }} / {{ C.NUM_ROUNDS }}
+    </p>
+
+    <p>
+        Reminder: <br>
+        <span style="color:mediumblue">Blue</span> Points: {{ C.ENDOWMENT }}
+        <br>
+        <span style="color:mediumseagreen">Green</span> Points: {{ C.ENDOWMENT }}
+        <br> Multiplier: 0.5 (both groups)
+        <br> All points not invested to your <span style="color:mediumblue">Blue</span> or
+        <span style="color:mediumseagreen">Green</span> Group's Joint Account remain in your Personal Account.
+    </p>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="width: 49%;">
+            How much will you invest to your <span style="color:mediumblue">Blue</span> group?
+            <br> {{ form.blue_group_investment }}
+        </div>
+        <div style="width: 49%;">
+            How much will you invest to your <span style="color:mediumseagreen">Green</span> group?
+            <br> {{ form.green_group_investment}}</div>
+    </div>
+
+    <br>
+
+    <div style="text-align: center;">
+        {{ next_button }}
+    </div>
+
+<div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Period History</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Period</th>
+                        <th scope="col">Your <span style="color:mediumblue">Blue</span> Investment</th>
+                        <th scope="col">Your <span style="color:mediumseagreen">Green</span> Investment</th>
+                        <th scope="col">Total <span style="color:mediumblue">Blue</span>  Investment</th>
+                        <th scope="col">Total <span style="color:mediumseagreen">Green</span> Investment</th>
+                        <th scope="col"><span style="color:mediumblue">Blue</span> Individual Share</th>
+                        <th scope="col"><span style="color:mediumseagreen">Green</span> Individual Share</th>
+                        <th scope="col">Personal Account</th>
+                        <th scope="col">Period Earnings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in history %}
+                        <tr>
+                            <td>{{ row.round_number }}</td>
+                            <td>{{ row.blue_group_investment }}</td>
+                            <td>{{ row.green_group_investment }}</td>
+                            <td>{{ row.blue_group_total_investment }}</td>
+                            <td>{{ row.green_group_total_investment }}</td>
+                            <td>{{ row.blue_group_individual_share }}</td>
+                            <td>{{ row.green_group_individual_share }}</td>
+                            <td>{{ row.personal_account }}</td>
+                            <td>{{ row.payoff }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{{ endblock }}

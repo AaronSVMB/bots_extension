@@ -1,0 +1,69 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    <p style="text-align:right;">
+        Period: {{ player.round_number }} / {{ C.NUM_ROUNDS }}
+    </p>
+
+    <p>
+        Points Received: {{ C.ENDOWMENT }}
+        <br>
+    </p>
+
+    <p style="text-align: center">
+        Your Group's Period Results
+    </p>
+
+    <p>
+        Your Investment: {{ player.investment }}
+        <br>
+        Total Investment: {{ player.group_total_investment }}
+        <br>
+        Individual Share: {{ player.group_individual_share }}
+    </p>
+
+    <p>
+        Personal Account: {{ player.personal_account }}
+        <br>
+        Period Earnings: {{ player.payoff }}
+    </p>
+
+    <p>
+        These results are summarized below
+    </p>
+
+<div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Current Period's Results</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Period</th>
+                        <th scope="col">Your Investment</th>
+                        <th scope="col">Total Investment</th>
+                        <th scope="col">Individual Share</th>
+                        <th scope="col">Personal Account</th>
+                        <th scope="col">Period Earnings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>{{ player.round_number }}</td>
+                            <td>{{ player.investment }}</td>
+                            <td>{{ player.group_total_investment }}</td>
+                            <td>{{ player.group_individual_share }}</td>
+                            <td>{{ player.personal_account }}</td>
+                            <td>{{ player.payoff }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+
+    <div style="text-align: center;">
+        {{ next_button }}
+    </div>
+
+{{ endblock }}

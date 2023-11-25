@@ -1,0 +1,330 @@
+{{ block title }}Instructions{{ endblock }}
+
+{{ block content }}
+
+    <h3 style="text-align: center;">Conversion Rate</h3>
+
+    <p>
+        During the experiment, your earnings will be measured in points. Each point is worth 2 cents, so at the end of the experiment your points will be converted to dollars at a rate of <strong>50 points per dollar</strong>.
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Your Groups</h3>
+
+    <p>
+        <ul>
+            <li>You will participate in <strong>two groups</strong> simultaneously</li>
+            <ul>
+                <li>The <span style="color:mediumblue">Blue</span> group</li>
+                <li>The <span style="color:mediumseagreen">Green</span> group</li>
+            </ul>
+            <li>Each group will consist of <strong>4 members</strong> (including you), and you will be in these groups for <strong>{{ C.NUM_PERIODS }} periods</strong></li>
+            <li>Note – <strong>All three participants</strong> in your <span style="color:mediumblue">Blue</span> group are <strong>different</strong> from the <strong>three participants</strong> in your <span style="color:mediumseagreen">Green</span> group</li>
+            <li>You will not know the identity or the individual decisions of the participants you are grouped with</li>
+        </ul>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">The AI participants</h3>
+
+    <p>
+        <ul>
+            <li>Some of the participants in this experiment, members of your <span style="color:mediumblue">Blue</span> and your <span style="color:mediumseagreen">Green</span> group,
+                are <i>computerized AI's</i> (artificial intelligence)</li>
+            <ul>
+                <li><strong>No group in this experiment has more than 2 AI players</strong></li>
+            </ul>
+            <li>All other participants are human participants and are currently in this room</li>
+        </ul>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Your Decision Screen</h3>
+
+    <p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 49%;">
+                <ul>
+                    <li>To the right is the decision screen that you will see in each period</li>
+                    <li>The current period is displayed in the top right (shown in <span style="color: blueviolet">purple</span>)</li>
+                    <li>At the start of each period, you will receive <strong> {{ C.ENDOWMENT }}</strong> (shown in <span style="color: coral">orange</span>)</li>
+                </ul>
+            </div>
+            <div style="width: 49%;">
+                <img src="{% static 'SharedEndowment/PeriodandPointsNew.jpg' %}" alt="Image" height="300">
+            </div>
+        </div>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Making Your Decision</h3>
+
+    <p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 49%;">
+                <ul>
+                    <li>In each period, you must decide how many of your {{ C.ENDOWMENT }} to invest to your</li>
+                    <ul>
+                        <li><span style="color:mediumblue">Blue</span> Group's Joint Account (shown in <span style="color:mediumblue">blue</span>)</li>
+                        <li><span style="color:mediumseagreen">Green</span> Group's Joint Account (shown in <span style="color:mediumseagreen">green</span>)</li>
+                        <li>Personal Account</li>
+                    </ul>
+                    <li>To invest points to your <span style="color:mediumblue">Blue</span> Group's Joint Account, enter a whole number between 0 and {{ C.ENDOWMENT }} in the <span style="color:mediumblue">blue</span> circled region </li>
+                    <li>To invest points to your <span style="color:mediumseagreen">Green</span> Group's Joint Account, enter a whole number between 0 and {{ C.ENDOWMENT }} in the <span style="color:mediumseagreen">green</span> circled region</li>
+                    <li>The computer automatically invests the rest of your points in your Personal Account </li>
+                </ul>
+            </div>
+            <div style="width: 49%;">
+                <img src="{% static 'SharedEndowment/DecScreenDecisionsNew.jpg' %}" alt="Image" height="300">
+            </div>
+        </div>
+    </p>
+
+    <h4 style="text-align: center;">Example</h4>
+
+    <p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 49%;">
+                <ul>
+                    <li>Suppose you</li>
+                    <ul>
+                        <li>Invest 6 points to your <span style="color:mediumblue">Blue</span> Group's Joint Account</li>
+                        <li>Invest 3 points to your <span style="color:mediumseagreen">Green</span> Group's Joint Account </li>
+                        <li>Then, by clicking the next button, the computer will automatically invest the rest of your points, 11, into your Personal Account (20 - 6 - 3 = 11).</li>
+                    </ul>
+                </ul>
+            </div>
+            <div style="width: 49%;">
+                <img src="{% static 'SharedEndowment/InvestExampleNew.jpg' %}" alt="Image" height="300">
+            </div>
+        </div>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Important Note</h3>
+
+    <p>
+        <ul>
+            <li><strong>Your investment across your <span style="color:mediumblue">Blue</span> and <span style="color:mediumseagreen">Green</span> Group's Joint Accounts in each period cannot exceed the {{ C.ENDOWMENT }} you receive each period</strong></li>
+        </ul>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 49%;">
+                <ul>
+                    <li>For example, </li>
+                    <ul>
+                        <li>The investment of 12 points to your <span style="color:mediumblue">Blue</span> Group's Joint Account and 15 points to your <span style="color:mediumseagreen">Green</span> Group's Joint Account, as seen in the picture to the right, is an infeasible combination as their sum exceeds the {{ C.ENDOWMENT }} you receive each period.</li>
+                    </ul>
+                </ul>
+            </div>
+            <div style="width: 49%;">
+                <img src="{% static 'SharedEndowment/ImportantNoteNew.jpg' %}" alt="Image" height="300">
+            </div>
+        </div>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center">AI Participant Decision</h3>
+
+    <p>
+        <ul>
+            <li>The AI's are programmed with algorithms that guide how they invest in each period</li>
+            <li>The algorithms are designed to imitate the behavior of different human participants who have participated
+            in similar experiments earlier this semester</li>
+            <li>Each AI faces the same decision as you</li>
+            <ul>
+                <li>They each decide how many of their {{ C.ENDOWMENT }} to invest in their <span style="color:mediumblue">Blue</span>
+                Group, <span style="color:mediumseagreen">Green</span> Group, and Personal Account</li>
+                <li>Like you, each AI makes their own decision without knowing the individual decisions or identities
+                of the other players in their groups</li>
+            </ul>
+        </ul>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Period Earnings</h3>
+
+    <p>
+        <ul>
+            <li>Your earnings in a period are the <strong>sum</strong> of your earnings from</li>
+            <ul>
+                <li><span style="color:mediumblue">Blue</span> Group's Joint Account (your <span style="color:mediumblue">Blue</span> Individual Share)</li>
+                <li><span style="color:mediumseagreen">Green</span> Group's Joint Account (your <span style="color:mediumseagreen">Green</span> Individual Share)</li>
+                <li>Personal Account</li>
+            </ul>
+        </ul>
+    </p>
+
+    <h4 style="text-align: center;">Group's Joint Accounts</h4>
+
+    <p>
+        <ul>
+            <li>Earnings from your <span style="color:mediumblue">Blue</span> and <span style="color:mediumseagreen">Green</span> Group's Joint Accounts</li>
+            <ul>
+                <li>Depends on the total number of points that you and other members of the group invest in the Joint Account</li>
+                <li><strong>Each member</strong> will earn 0.5 times the total number of points invested in the Group's Joint Account</li>
+            </ul>
+        </ul>
+        <strong>Group Earnings</strong> = ( income from Group's Joint Account [= Your Individual Share] )
+        <br>
+        Which is the same as
+        <br>
+        = ( 0.5 x sum of all investments to the Group's Joint Account )
+    </p>
+
+    <h4 style="text-align: center;">Personal Account</h4>
+
+    <p>
+       The points you place in your Personal Account will be directly added to your earnings. (For Example, if you place
+        5 points in your Personal Account then you will earn 5 points from your Personal Account.)
+        <br> <br>
+        Your <strong>Personal Account (in one period)</strong> is determined as follows:
+        <br> <br>
+        <strong>Personal Account</strong> = ( 20 ) - ( your investment to your <span style="color:mediumblue">Blue</span>
+        Group's Joint Account ) - ( your investment to your <span style="color:mediumseagreen">Green</span> Group's
+        Joint Account )
+    </p>
+
+    <h4 style="text-align: center;">Total Earnings</h4>
+
+    <p>
+        <strong>Total Earnings (in one period)</strong> = ( Personal Account ) + (
+        <span style="color:mediumblue">Blue</span> Individual Share ) + ( <span style="color:mediumseagreen">Green</span>
+        Individual Share )
+        <br> <br>
+        Which is the same as
+        <br>
+        = ( 20 ) - ( your investment to your <span style="color:mediumblue">Blue</span>
+        Group's Joint Account ) - ( your investment to your <span style="color:mediumseagreen">Green</span> Group's
+        Joint Account )
+        <br>
+        + ( 0.5 x sum of all investments to the <span style="color:mediumblue">Blue</span> Group's Joint Account )
+        <br>
+        + ( 0.5 x sum of all investments to the <span style="color:mediumseagreen">Green</span> Group's Joint Account )
+    </p>
+
+    <h4 style="text-align: center;">Example</h4>
+
+    <p>
+        <strong>Investments</strong>
+        <ul>
+            <li>Suppose you invest</li>
+            <ul>
+                <li>5 points to your <span style="color: mediumblue">Blue</span> Group's Joint Account</li>
+                <li>7 points to your <span style="color:mediumseagreen">Green</span> Group's Joint Account</li>
+            </ul>
+            <li>And the three other members of your</li>
+            <ul>
+                <li><span style="color: mediumblue">Blue</span> Group invest a total of 17 points</li>
+                <li><span style="color:mediumseagreen">Green</span> Group invest a total of 23 points</li>
+            </ul>
+        </ul>
+        <strong>Earnings</strong>
+        <ul>
+            <li>Group Earnings: (Your Investment + Total of the three Other Members' Investments) x (0.5)</li>
+            <ul>
+                <li><span style="color: mediumblue;">Blue</span>: (5 + 17) x (0.5) = 22 x 0.5 = 11 points (<span style="color: mediumblue">Blue</span> Individual Share)</li>
+                <li><span style="color:mediumseagreen">Green</span>: (7 + 23) x (0.5) = 30 x 0.5 = 15 points (<span style="color:mediumseagreen">Green</span> Individual Share)</li>
+            </ul>
+            <li>Personal Account: (points received) - (your <span style="color: mediumblue">Blue</span> investment)
+            - (your <span style="color:mediumseagreen">Green</span> investment)</li>
+            <ul>
+                <li>(20) - (5) - (7) = 8 points</li>
+            </ul>
+            <li>Total Earnings: (<span style="color: mediumblue;">Blue</span> Individual Share) + (<span style="color:mediumseagreen">Green</span> Individual Share) + (Personal Account)</li>
+            <ul>
+                <li>(11) + (15) + (8) = 34 points</li>
+            </ul>
+        </ul>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Results</h3>
+
+    <p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 49%;">
+                <ul>
+                    <li>At the end of each period, the computer will show you</li>
+                    <ul>
+                        <li>On the Left</li>
+                        <ul>
+                            <li>Your Investment in the <span style="color: mediumblue;">Blue</span> Group's Joint Account</li>
+                            <li>Total Investment in the <span style="color: mediumblue">Blue</span> Group's Joint Account</li>
+                            <li>Each <span style="color: mediumblue">Blue</span> member's Individual Share</li>
+                        </ul>
+                        <li>On the Right</li>
+                        <ul>
+                            <li>Your Investment in the <span style="color:mediumseagreen">Green</span> Group's Joint Account</li>
+                            <li>Total Investment in the <span style="color:mediumseagreen">Green</span> Group's Joint Account</li>
+                            <li>Each <span style="color:mediumseagreen">Green</span> member's Individual Share</li>
+                        </ul>
+                        <li>Centered</li>
+                        <ul>
+                            <li>Your Personal Account</li>
+                            <li>Your Period Earnings</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+            <div style="width: 49%;">
+                <img src="{% static 'SharedEndowment/SharedResultsNew.jpg' %}" alt="Image" height="300">
+            </div>
+        </div>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">History Table</h3>
+
+    <p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 49%;">
+                <ul>
+                    <li>In each period, after the first, the prior periods outcome will be displayed</li>
+                    <ul>
+                        <li>This includes and summarizes the information presented on each 'Results' Screen</li>
+                    </ul>
+                </ul>
+            </div>
+            <div style="width: 49%;">
+                <img src="{% static 'SharedEndowment/SharedHistoryTableNew.jpg' %}" alt="Image" height="300">
+            </div>
+        </div>
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Reminder</h3>
+
+    <p>
+        As a final reminder, you will be paid based on your <strong>cumulative earnings</strong> from all periods.
+        These earnings will be converted to USD at the end of the experiment at a rate of
+        <strong>50 points = 1 USD</strong>.
+    </p>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center;">Thank you</h3>
+
+    <p>
+        Thank you for reading the instructions. You will now participate in a quiz on the next page and will have 6 minutes
+        to answer the four questions. You have to answer each question correctly in order to proceed to the next question.
+        If you answer a question incorrectly, you will see a hint. At that point you wil have an opportunity to answer
+        the question again. After the quiz, we will begin the first period of the experiment.
+    </p>
+
+    <br>
+
+    <div style="text-align: center;">
+        {{ next_button }}
+    </div>
+
+{{ endblock }}

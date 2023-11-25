@@ -1,0 +1,90 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    <p style="text-align:right;">
+        Period: {{ player.round_number }} / {{ C.NUM_ROUNDS }}
+    </p>
+
+    <p>
+        Points Received: {{ C.ENDOWMENT }}
+    </p>
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="width: 49%;">
+            <p>
+                <span style="color:mediumblue">Blue</span> Group's Period Results
+            </p>
+            <p>
+                Your <span style="color:mediumblue">Blue</span> Investment: {{ player.blue_group_investment }}
+                <br>
+                Total <span style="color:mediumblue">Blue</span> Investment: {{ player.blue_group_total_investment }}
+                <br>
+                <span style="color:mediumblue">Blue</span> Individual Share: {{player.blue_group_individual_share }}
+            </p>
+        </div>
+        <div style="width: 49%;">
+            <p>
+                <span style="color:mediumseagreen">Green</span> Group's Period Results
+            </p>
+            <p>
+                Your <span style="color:mediumseagreen">Green</span> Investment: {{ player.green_group_investment }}
+                <br>
+                Total <span style="color:mediumseagreen">Green</span> Investment: {{ player.green_group_total_investment }}
+                <br>
+                <span style="color:mediumseagreen">Green</span> Individual Share: {{ player.green_group_individual_share }}
+            </p>
+        </div>
+    </div>
+
+    <p>
+        <br>
+        Personal Account: {{ player.personal_account }}
+        <br>
+        Period Earnings: {{ player.payoff }}
+    </p>
+
+    <p>
+        These results are summarized below
+    </p>
+
+<div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Current Period's Results</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Period</th>
+                        <th scope="col">Your <span style="color:mediumblue">Blue</span> Investment</th>
+                        <th scope="col">Your <span style="color:mediumseagreen">Green</span> Investment</th>
+                        <th scope="col">Total <span style="color:mediumblue">Blue</span>  Investment</th>
+                        <th scope="col">Total <span style="color:mediumseagreen">Green</span> Investment</th>
+                        <th scope="col"><span style="color:mediumblue">Blue</span> Individual Share</th>
+                        <th scope="col"><span style="color:mediumseagreen">Green</span> Individual Share</th>
+                        <th scope="col">Personal Account</th>
+                        <th scope="col">Period Earnings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>{{ player.round_number }}</td>
+                            <td>{{ player.blue_group_investment }}</td>
+                            <td>{{ player.green_group_investment }}</td>
+                            <td>{{ player.blue_group_total_investment }}</td>
+                            <td>{{ player.green_group_total_investment }}</td>
+                            <td>{{ player.blue_group_individual_share }}</td>
+                            <td>{{ player.green_group_individual_share }}</td>
+                            <td>{{ player.personal_account }}</td>
+                            <td>{{ player.payoff }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+
+    <div style="text-align: center;">
+        {{ next_button }}
+    </div>
+
+{{ endblock }}
